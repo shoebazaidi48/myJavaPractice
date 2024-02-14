@@ -58,7 +58,7 @@ public class PracticeJavaTest {
 
     @Test
     void testGreaterValueInArray() {
-        int[] inputArray = new Random().ints(30, 0, 100).toArray();
+        int[] inputArray = generateRandomIntArray(30);
         int[] resultArray = new int[inputArray.length];
         System.out.println("inputArray " + Arrays.toString(inputArray));
 
@@ -73,4 +73,25 @@ public class PracticeJavaTest {
         System.out.println("finalArray " + Arrays.toString(finalArray));
     }
 
+    @Test
+    void testRemoveEvenNumbers() {
+        int[] inputArray = generateRandomIntArray(12);
+        int[] resultArray = new int[inputArray.length];
+
+        System.out.println("inputArray " + Arrays.toString(inputArray));
+        for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i] % 2 != 0)
+                resultArray[i] = inputArray[i];
+        }
+
+        int[] finalArray = Arrays.stream(resultArray).filter(num -> num != 0).toArray();
+        System.out.println("finalArray " + Arrays.toString(finalArray));
+    }
+
+    private int[] generateRandomIntArray(final int randomSize) {
+        int[] inputArray = new Random().ints(randomSize, 0, 100).toArray();
+        assertThat(inputArray).isNotEmpty();
+
+        return inputArray;
+    }
 }
