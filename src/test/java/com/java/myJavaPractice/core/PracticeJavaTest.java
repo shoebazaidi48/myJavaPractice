@@ -27,7 +27,7 @@ public class PracticeJavaTest {
         for (int i = 0; i < inputArray.length; i++) {
             result[i] = temp;
             temp *= inputArray[i];
-            System.out.println("Temp " + temp);
+//            System.out.println("Temp " + temp);
         }
 
         temp = 1;
