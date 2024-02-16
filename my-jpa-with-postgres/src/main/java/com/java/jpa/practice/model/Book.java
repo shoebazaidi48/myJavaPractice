@@ -11,6 +11,7 @@ import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -30,5 +31,20 @@ public class Book {
         this.title = title;
         this.price = price;
         this.publishDate = publishDate;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.id, this.title, this.price, this.publishDate);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Book book))
+            return false;
+
+        return Objects.equals(this.id, book.id) && Objects.equals(this.title, book.getTitle());
     }
 }

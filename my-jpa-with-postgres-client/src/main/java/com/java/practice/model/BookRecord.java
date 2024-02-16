@@ -1,4 +1,4 @@
-package com.java.jpa.practice.model;
+package com.java.practice.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

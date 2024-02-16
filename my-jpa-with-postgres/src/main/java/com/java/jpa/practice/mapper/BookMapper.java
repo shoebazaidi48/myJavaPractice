@@ -13,7 +13,9 @@ public class BookMapper {
 
     public Book mapToBook(BookRecord bookRecord) {
         Book book = new Book();
-        book.setId(bookRecord.id());
+        if(null != bookRecord.id())
+            book.setId(bookRecord.id());
+
         book.setTitle(bookRecord.title());
         book.setPrice(bookRecord.price());
         book.setPublishDate(bookRecord.publishDate());

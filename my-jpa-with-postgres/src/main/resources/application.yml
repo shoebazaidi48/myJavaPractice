@@ -22,5 +22,5 @@ spring:
 app:
   db:
     init:
-      enabled: true
+      enabled: false
 
